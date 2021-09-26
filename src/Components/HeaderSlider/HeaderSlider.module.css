@@ -1,0 +1,34 @@
+@import "../../Colors.css";
+
+.sliderContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sliderContainer .title {
+  font-size: 2.4rem;
+  padding: 25px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.cardContainer {
+  width: 100%;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cards {
+  display: flex;
+}
+
+.cards li {
+  min-width: 130px;
+  height: 160px;
+  background-color: var(--gray);
+  border-radius: 10px;
+  margin-left: 10px;
+}

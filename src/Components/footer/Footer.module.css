@@ -1,0 +1,11 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.footerContainer div {
+  display: flex;
+  justify-content: space-between;
+}

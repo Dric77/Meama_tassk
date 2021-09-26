@@ -1,0 +1,36 @@
+@import "../../Colors.css";
+
+.container {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.bg {
+  width: 100%;
+  height: 315px;
+  border-bottom-right-radius: 80px;
+  background-color: var(--black);
+}
+
+.logo {
+  height: 100%;
+}
+
+.lanSwitcher {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.lanSwitcher h3 {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.lanSwitcher img {
+  width: 100%;
+  max-width: 30px;
+  height: auto;
+}

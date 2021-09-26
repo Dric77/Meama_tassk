@@ -1,0 +1,31 @@
+.sliderContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 170px;
+}
+
+.sliderContainer .title {
+  font-size: 2.4rem;
+  padding: 25px;
+}
+
+.cardContainer {
+  width: 100%;
+  overflow: hidden;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cards {
+  display: flex;
+}
+
+.cards li {
+  min-width: 160px;
+  height: 235px;
+  background-color: #108d10;
+  border-radius: 10px;
+  margin-left: 10px;
+}

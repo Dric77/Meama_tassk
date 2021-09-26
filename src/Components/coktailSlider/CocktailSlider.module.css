@@ -1,0 +1,53 @@
+@import "../../Colors.css";
+
+.sliderContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.sliderContainer .title {
+  font-size: 2.4rem;
+  padding: 25px;
+}
+
+.coktailFilter {
+  width: 100%;
+  padding: 25px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.coktailFilter li {
+  padding: 15px;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.active {
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 1rem;
+}
+
+.cardContainer {
+  width: 100%;
+  overflow: hidden;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cards {
+  display: flex;
+}
+
+.cards li {
+  min-width: 160px;
+  height: 235px;
+  background-color: #108d10;
+  border-radius: 10px;
+  margin-left: 10px;
+}
