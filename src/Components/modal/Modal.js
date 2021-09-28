@@ -15,6 +15,7 @@ export default function Modal({ modalHandler, openModal }) {
     dispatch(setLanguage(e.target.value));
     dispatch(getProducts(e.target.value));
     dispatch(changeLanguage());
+    localStorage.setItem("choosed_language", e.target.value);
   };
 
   return (

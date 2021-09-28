@@ -1,5 +1,10 @@
 @import "../../Colors.css";
 
+.remmoveLinkStyles {
+  text-decoration: none;
+  color: var(--black);
+}
+
 .sliderContainer {
   width: 100%;
   display: flex;
@@ -23,12 +28,31 @@
 
 .cards {
   display: flex;
+  overflow: visible;
 }
 
-.cards li {
+.swiper {
+  overflow: visible;
   min-width: 130px;
+  width: 130px;
   height: 160px;
   background-color: var(--gray);
   border-radius: 10px;
   margin-left: 10px;
+}
+
+.li {
+  margin-top: -10px;
+}
+
+@media (max-width: 376px) {
+  .sliderContainer .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 321px) {
+  .sliderContainer .title {
+    font-size: 1.5rem;
+  }
 }

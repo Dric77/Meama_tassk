@@ -6,12 +6,28 @@
   display: flex;
   justify-content: space-between;
   color: white;
+  z-index: 1000;
 }
 .bg {
   width: 100%;
   height: 315px;
+  position: relative;
   border-bottom-right-radius: 80px;
   background-color: var(--black);
+}
+
+.bgImage::before {
+  content: "";
+  background-image: url("../../Logo//bgImg.png");
+  background-position: right;
+  background-size: 200%;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
 }
 
 .logo {
@@ -33,4 +49,10 @@
   width: 100%;
   max-width: 30px;
   height: auto;
+}
+
+@media (max-width: 3756px) {
+  .bg {
+    border-bottom-right-radius: 40px;
+  }
 }

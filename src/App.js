@@ -1,50 +1,50 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import { ERROR_PAGE, HOME_PAGE, SINGLE_PRODUCT } from "./routs.js";
 
-import Header from "./Components/Header/Header.js";
 import classes from "./App.module.css";
-import HeaderBg from "./Components/Header/HeaderBg.js";
-import Contaier from "./Components/container/Contaier.js";
-import HeaderSlider from "./Components/HeaderSlider/HeaderSlider.js";
-import MainSlider from "./Components/mainSlider/MainSlider.js";
-import Footer from "./Components/footer/Footer.js";
+
+import HomePage from "./pages/homePage/HomePage.js";
+import SingleProduct from "./pages/singleProduct/SingleProduct.js";
+import ErrorPage from "./pages/errorPage/ErrorPage.js";
 import { getProducts } from "./store/products/userActions.js";
-import Modal from "./Components/modal/Modal.js";
-import { selectLanguage } from "./store/products/productsSelectors.js";
 import { changeLanguage } from "./store/language/languageActions.js";
-import CocktailSlider from "./Components/coktailSlider/CocktailSlider.js";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectError,
+  selectLanguage
+} from "./store/products/productsSelectors.js";
 
 function App() {
   const dispatch = useDispatch();
 
-  const [productData, setProductData] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
-
   const language = useSelector(selectLanguage);
+  const isError = useSelector(selectError);
+
+  let localLanguage = localStorage.getItem("choosed_language");
 
   useEffect(() => {
-    dispatch(getProducts(language));
+    dispatch(getProducts(localLanguage ? localLanguage : language));
     dispatch(changeLanguage());
   }, []);
 
-  let modalHandler = () => {
-    setOpenModal(!openModal);
-  };
-
   return (
     <div className={classes.mainContainer}>
-      <Modal openModal={openModal} modalHandler={modalHandler} />
-      <HeaderBg>
-        <Contaier>
-          <Header modalHandler={modalHandler} />
-        </Contaier>
-        <HeaderSlider datat={productData} />
-      </HeaderBg>
-      <MainSlider />
-      <CocktailSlider />
-      <Contaier>
-        <Footer />
-      </Contaier>
+      <Router>
+        <Switch>
+          <Route exact path={HOME_PAGE} component={HomePage} />
+          <Route exact path={SINGLE_PRODUCT} component={SingleProduct}>
+            {isError ? <Redirect to={ERROR_PAGE} /> : <SingleProduct />}
+          </Route>
+          <Route path={ERROR_PAGE} component={ErrorPage} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }

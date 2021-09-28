@@ -1,6 +1,6 @@
 import API from "../../api.js";
-import { setChoosedLanguage } from "./languageActionCreatrs.js";
+import { setLanguages } from "./languageActionCreatrs.js";
 
 export const changeLanguage = () => (dispatch) => {
-  API.switchLanguage().then((lan) => dispatch(setChoosedLanguage(lan)));
+  API.switchLanguage().then((lan) => dispatch(setLanguages(lan)));
 };

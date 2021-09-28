@@ -7,8 +7,8 @@ const initialState = {
 export const language = (state = initialState, action) => {
   switch (action.type) {
     case SET_LANGUAGE:
-      console.log(action);
       return {
+        ...state,
         languages: action.languages
       };
 

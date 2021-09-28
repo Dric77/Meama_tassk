@@ -16,7 +16,9 @@ function CocktailSlider() {
 
   return (
     <div className={classes.sliderContainer}>
-      <h1 className={classes.title}> {cocktail.name} </h1>
+      <h1 className={classes.title}>
+        {cocktail && cocktail.name && cocktail.name}
+      </h1>
       <ul className={classes.coktailFilter}>
         {cocktail &&
           cocktail.subCategories &&

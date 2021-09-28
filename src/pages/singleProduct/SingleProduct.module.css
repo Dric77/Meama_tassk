@@ -1,0 +1,80 @@
+@import "../../Colors.css";
+
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.detail .title {
+  width: 100%;
+  height: auto;
+}
+
+.detail .title h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.detail .specifications {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail .specifications .text {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.detail .specifications .text h4 {
+  font-weight: 200;
+}
+
+.imgGroup {
+  width: 108px;
+  height: 44px;
+  display: flex;
+  margin-top: 40px;
+}
+
+.imgBg {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.imgBg img {
+  width: 100%;
+  height: auto;
+}
+
+.active {
+  transform: translateY(-20px);
+}
+
+.productImg {
+  height: 239px;
+  width: 192px;
+  max-width: 200px;
+  position: relative;
+  transform: translateX(25px);
+  border-radius: 50% 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.productImg img {
+  width: auto;
+  max-width: 170px;
+  margin-right: 25px;
+}

@@ -20,8 +20,14 @@ const API = {
   getAllData: function (param) {
     return this.sendRequest(param).then((json) => json);
   },
+  getSingleData: function (param) {
+    return this.sendRequest(param).then((json) => json);
+  },
   switchLanguage: function () {
     return this.sendRequest("languages").then((json) => json);
+  },
+  getFooterData: function (param) {
+    return this.sendRequest(param).then((json) => json);
   }
 };
 

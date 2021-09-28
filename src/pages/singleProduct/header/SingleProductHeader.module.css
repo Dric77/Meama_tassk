@@ -1,0 +1,17 @@
+@import "../../../Colors.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 65px;
+}
+
+.backIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--dark_gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

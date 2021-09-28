@@ -9,3 +9,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.socialLinks {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100px;
+}

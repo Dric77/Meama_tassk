@@ -7,8 +7,8 @@
 }
 
 .cardImg {
-  margin-top: -30px;
-  width: 130px;
+  margin-top: -50px;
+  height: 140px;
   padding: 20px 20px 0 20px;
 }
 
@@ -17,10 +17,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin-bottom: 15px;
+  height: 70px;
+}
+
+.description h3 {
+  font-size: 100%;
+  font-weight: 400;
+  text-align: center;
 }
 
 .description h1 {
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 600;
 }

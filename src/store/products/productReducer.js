@@ -15,6 +15,7 @@ const initialState = {
   cake: [],
   meamaProducts: [],
   language: "ka",
+  isError: false,
   errors: ""
 };
 
@@ -53,7 +54,7 @@ export const products = (state = initialState, action) => {
     case SET_ERRORS:
       return {
         ...state,
-        errors: action.errors
+        isError: action.isError
       };
 
     default:

@@ -1,29 +1,28 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectTea } from "../../store/products/productsSelectors.js";
-
 import { SINGLE_PRODUCT } from "../../routs.js";
+import { selectCake } from "../../store/products/productsSelectors.js";
 
-import classes from "./MainSlider.module.css";
+import CakeCard from "./cakeCard/CakeCard.js";
 
-import MainCard from "./mainCard/MainCard.js";
+import classes from "./CakeSlider.module.css";
 
-function MainSlider() {
-  const tea = useSelector(selectTea);
+function CakeSlider() {
+  const cake = useSelector(selectCake);
 
   return (
     <div className={classes.sliderContainer}>
-      <h1 className={classes.title}> {tea && tea.name && tea.name} </h1>
+      <h1 className={classes.title}> {cake && cake.name && cake.name} </h1>
       <div className={classes.cardContainer}>
         <ul className={classes.cards}>
-          {tea &&
-            tea.subCategories &&
-            tea.subCategories[0].products.map((el) => {
+          {cake &&
+            cake.products &&
+            cake.products.map((el) => {
               return (
                 <Link to={SINGLE_PRODUCT.replace("slug", el.slug)}>
                   <li key={el.id}>
-                    <MainCard data={el} />
+                    <CakeCard data={el} />
                   </li>
                 </Link>
               );
@@ -34,4 +33,4 @@ function MainSlider() {
   );
 }
 
-export default MainSlider;
+export default CakeSlider;

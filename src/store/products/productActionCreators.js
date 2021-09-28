@@ -50,9 +50,9 @@ export const setLanguage = (language) => {
   };
 };
 
-export const setErrors = (errors) => {
+export const setErrors = (isError) => {
   return {
     type: SET_ERRORS,
-    errors
+    isError
   };
 };
