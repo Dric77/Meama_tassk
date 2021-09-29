@@ -19,6 +19,7 @@ import {
   selectError,
   selectLanguage
 } from "./store/products/productsSelectors.js";
+import Loader from "./Components/loader/Loader.js";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,16 +36,18 @@ function App() {
 
   return (
     <div className={classes.mainContainer}>
-      <Router>
-        <Switch>
-          <Route exact path={HOME_PAGE} component={HomePage} />
-          <Route exact path={SINGLE_PRODUCT} component={SingleProduct}>
-            {isError ? <Redirect to={ERROR_PAGE} /> : <SingleProduct />}
-          </Route>
-          <Route path={ERROR_PAGE} component={ErrorPage} />
-          <Route path="*" component={ErrorPage} />
-        </Switch>
-      </Router>
+      <Loader>
+        <Router>
+          <Switch>
+            <Route exact path={HOME_PAGE} component={HomePage} />
+            <Route exact path={SINGLE_PRODUCT} component={SingleProduct}>
+              {isError ? <Redirect to={ERROR_PAGE} /> : <SingleProduct />}
+            </Route>
+            <Route path={ERROR_PAGE} component={ErrorPage} />
+            <Route path="*" component={ErrorPage} />
+          </Switch>
+        </Router>
+      </Loader>
     </div>
   );
 }

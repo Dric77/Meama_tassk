@@ -1,15 +1,14 @@
 import { SET_LANGUAGE } from "./languageTypes.js";
 
 const initialState = {
-  languages: []
+  lan: []
 };
 
 export const language = (state = initialState, action) => {
   switch (action.type) {
     case SET_LANGUAGE:
       return {
-        ...state,
-        languages: action.languages
+        lan: action.languages
       };
 
     default:

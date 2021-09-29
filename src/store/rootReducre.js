@@ -3,8 +3,8 @@ import { products } from "./products/productReducer.js";
 import { language } from "./language/languageReducer.js";
 
 const rootReducer = combineReducers({
-  products,
-  language
+  language,
+  products
 });
 
 export default rootReducer;

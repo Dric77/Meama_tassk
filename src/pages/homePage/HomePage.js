@@ -16,7 +16,6 @@ function HomePage() {
 
   let modalHandler = () => {
     setOpenModal(!openModal);
-    console.log("ssd");
   };
 
   return (

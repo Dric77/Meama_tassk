@@ -6,10 +6,13 @@ import {
   setErrors,
   setLanguage,
   setMeamaProducts,
-  setTea
+  setTea,
+  set,
+  setLoading
 } from "./productActionCreators.js";
 
 export const getProducts = (language) => (distaptch) => {
+  distaptch(setLoading(true));
   API.getAllData(language)
     .then((data) => {
       distaptch(setCoffe(data[0]));
@@ -21,5 +24,6 @@ export const getProducts = (language) => (distaptch) => {
     })
     .catch((e) => {
       setErrors(true);
-    });
+    })
+    .finally(() => distaptch(setLoading(false)));
 };

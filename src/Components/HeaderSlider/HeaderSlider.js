@@ -20,25 +20,25 @@ function HeaderSlider() {
     <div className={classes.sliderContainer}>
       <h1 className={classes.title}> {coffe && coffe.name && coffe.name} </h1>
       <div className={classes.cardContainer}>
-        <Swiper className={classes.cards}>
+        <div className={classes.cards}>
           {coffe &&
             coffe.products &&
             coffe.products.map((el) => {
               return (
-                <SwiperSlide className={classes.swiper}>
+                <div className={classes.swiper}>
                   <Link
                     className={classes.remmoveLinkStyles}
                     key={el.id}
                     to={SINGLE_PRODUCT.replace("slug", el.slug)}
                   >
-                    <li className={classes.li}>
+                    <div className={classes.li}>
                       <Card data={el} />
-                    </li>
+                    </div>
                   </Link>
-                </SwiperSlide>
+                </div>
               );
             })}
-        </Swiper>
+        </div>
       </div>
     </div>
   );

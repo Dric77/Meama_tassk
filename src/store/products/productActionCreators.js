@@ -4,6 +4,7 @@ import {
   SET_COFFE,
   SET_ERRORS,
   SET_LANGUAGE,
+  SET_LOADING,
   SET_MEAMA_PRODUCTS,
   SET_TEA
 } from "./reduxTypes.js";
@@ -47,6 +48,13 @@ export const setLanguage = (language) => {
   return {
     type: SET_LANGUAGE,
     language
+  };
+};
+
+export const setLoading = (isLoading) => {
+  return {
+    type: SET_LOADING,
+    isLoading
   };
 };
 

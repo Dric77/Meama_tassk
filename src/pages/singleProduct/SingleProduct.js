@@ -4,15 +4,19 @@ import { useParams } from "react-router-dom";
 import classes from "./SingleProduct.module.css";
 
 import Container from "../../Components/container/Contaier.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectLanguage } from "../../store/products/productsSelectors.js";
 import SingleProductHeader from "./header/SingleProductHeader.js";
 import API from "../../api.js";
 import Footer from "./footer/Footer.js";
+import Loader from "../../Components/loader/Loader.js";
+import { setLoading } from "../../store/products/productActionCreators.js";
 
 function SingleProduct() {
   const [singleData, setSingleData] = useState({});
   const [activeImg, setActiveImg] = useState(0);
+
+  const dispatch = useDispatch();
 
   const { slug } = useParams();
 
@@ -21,9 +25,9 @@ function SingleProduct() {
   let language = useSelector(selectLanguage);
 
   useEffect(() => {
-    API.getSingleData(`${language}/product/${path}`).then((data) =>
-      setSingleData(data)
-    );
+    API.getSingleData(`${language}/product/${path}`)
+      .then((data) => setSingleData(data))
+      .catch((e) => console.log("single producet error", e));
   }, []);
 
   const handleImgs = (e) => {
@@ -31,7 +35,7 @@ function SingleProduct() {
   };
 
   return (
-    <div>
+    <Loader>
       <Container>
         <SingleProductHeader />
 
@@ -97,7 +101,7 @@ function SingleProduct() {
 
         <Footer singleData={singleData} />
       </Container>
-    </div>
+    </Loader>
   );
 }
 

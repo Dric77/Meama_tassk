@@ -4,6 +4,7 @@ import {
   SET_COFFE,
   SET_ERRORS,
   SET_LANGUAGE,
+  SET_LOADING,
   SET_MEAMA_PRODUCTS,
   SET_TEA
 } from "./reduxTypes.js";
@@ -15,6 +16,7 @@ const initialState = {
   cake: [],
   meamaProducts: [],
   language: "ka",
+  isLoading: false,
   isError: false,
   errors: ""
 };
@@ -50,6 +52,11 @@ export const products = (state = initialState, action) => {
       return {
         ...state,
         language: action.language
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.isLoading
       };
     case SET_ERRORS:
       return {

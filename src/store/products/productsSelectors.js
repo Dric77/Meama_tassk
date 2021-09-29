@@ -6,4 +6,6 @@ export const selectCocktail = (state) => state.products.cocktail;
 
 export const selectLanguage = (state) => state.products.language;
 
+export const selectLoading = (state) => state.products.isLoading;
+
 export const selectError = (state) => state.products.isError;

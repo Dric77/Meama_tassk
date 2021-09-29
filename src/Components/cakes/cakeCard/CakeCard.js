@@ -3,7 +3,6 @@ import React from "react";
 import classes from "./CakeCard.module.css";
 
 function CakeCard({ data }) {
-  console.log("cake price", data);
   return (
     <div
       className={classes.cardContainer}
